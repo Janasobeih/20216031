@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('List Files') {
             steps {
-                // For Windows, use 'bat' to execute commands
-                bat 'dir'
+                // Correctly call the 'ls' command using 'sh'
+                sh 'ls -la'
             }
         }
     }
