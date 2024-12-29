@@ -1,11 +1,17 @@
 pipeline {
     agent any
+
     stages {
-        stage('List Files') {
+        stage('Clone Repository') {
             steps {
-                // Correctly call the 'ls' command using 'sh'
-                sh 'ls -la'
+                checkout scm
             }
         }
-    }
-}
+
+        stage('Execute Bash Script') {
+            steps {
+                // Make the script executable
+                sh 'chmod +x list_files.sh'
+
+                // Execute the bash script
+                sh './list_files.sh'
