@@ -15,3 +15,8 @@ pipeline {
 
                 // Execute the bash script
                 sh './list_files.sh'
+            }
+        }
+
+    }
+}
