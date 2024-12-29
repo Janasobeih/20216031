@@ -10,7 +10,7 @@ pipeline {
 
         stage('Execute Bash Script') {
             steps {
-                bat './list_files.bat'
+                sh './list_files.sh'
             }
         }
 
